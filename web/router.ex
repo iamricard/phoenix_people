@@ -15,14 +15,15 @@ defmodule PhoenixPeople.Router do
 
   scope "/", PhoenixPeople do
     pipe_through :browser # Use the default browser stack
-
-    get "/", PageController, :index
-
-    resources "/people", PersonController, except: [:new, :edit]
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", PhoenixPeople do
-  #   pipe_through :api
-  # end
+  scope "/api", PhoenixPeople do
+    pipe_through :api
+
+    scope "/person" do
+      get "/", PersonController, :index
+      post "/new", PersonController, :create
+    end
+
+  end
 end
