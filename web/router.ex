@@ -15,6 +15,8 @@ defmodule PhoenixPeople.Router do
 
   scope "/", PhoenixPeople do
     pipe_through :browser # Use the default browser stack
+
+    get "/", AppController, :index
   end
 
   scope "/api", PhoenixPeople do
