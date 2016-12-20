@@ -5,10 +5,6 @@ defmodule PhoenixPeople.PersonView do
     %{data: render_many(people, PhoenixPeople.PersonView, "person.json")}
   end
 
-  def render("show.json", %{person: person}) do
-    %{data: render_one(person, PhoenixPeople.PersonView, "person.json")}
-  end
-
   def render("person.json", %{person: person}) do
     %{id: person.id,
       name: person.name,

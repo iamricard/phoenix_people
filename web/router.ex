@@ -25,5 +25,8 @@ defmodule PhoenixPeople.Router do
       post "/new", PersonController, :create
     end
 
+    scope "/location" do
+      get "/:location", LocationController, :show
+    end
   end
 end

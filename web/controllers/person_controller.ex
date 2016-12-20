@@ -4,8 +4,7 @@ defmodule PhoenixPeople.PersonController do
   alias PhoenixPeople.Person
 
   def index(conn, _params) do
-    people = Repo.all(Person)
-    render(conn, "index.json", people: people)
+    render(conn, "index.json", people: Person |> Repo.all)
   end
 
   def create(conn, %{"person" => person_params}) do
