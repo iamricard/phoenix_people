@@ -36,16 +36,13 @@ exports.config = {
     elmBrunch: {
       elmFolder: 'web/elm',
       mainModules: ['App.elm'],
-      outputFolder: '../static/vendor'
+      outputFolder: '../static/js/elm'
     }
   },
 
   modules: {
     autoRequire: {
-      'js/app.js': [
-        'web/static/vendor/app',
-        'web/static/js/app'
-      ]
+      'js/app.js': ['web/static/js/app']
     }
   },
 
