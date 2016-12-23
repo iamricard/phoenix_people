@@ -5,7 +5,7 @@ defmodule PhoenixPeople.LocationController do
 
   def show(conn, %{"location" => location}) do
     render(conn, "show.json", %{
-      location: Person |> where([p], ilike(p.location, ^location)) |> Repo.all
+      location: Person |> where([p], ilike(p.location, ^"%#{location}%")) |> Repo.all
     })
   end
 end
